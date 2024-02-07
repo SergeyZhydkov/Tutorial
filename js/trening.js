@@ -691,3 +691,24 @@
 // console.log(arr);
 
 // console.log(arr.join(" "));
+
+// напиши скрипт, який буде перебирати масив та видаляти з нього всі елементи що не є типом даних Number
+// const arr = [3, "Hello", null, 42, false];
+// приклад 1 : при видаленні йде реіндексація і робимо компенсацію 'i -=1'
+// for (let i = 0; i < arr.length; i += 1) {
+//   if (typeof arr[i] !== "number") {
+//     console.log(arr[i]);
+//     arr.splice(i, 1);
+//     i -= 1;
+//   }
+// }
+// console.log(arr);
+
+//приклад 2 починаємо перебирати з кінця масиву і не треба компенсувати реіндексацію
+// for (let i = arr.length - 1; i >= 0; i -= 1) {
+//   if (typeof arr[i] !== "number") {
+// console.log(arr[i]);
+//     arr.splice(i, 1);
+//   }
+// }
+// console.log(arr);
