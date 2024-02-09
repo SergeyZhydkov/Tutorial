@@ -693,8 +693,9 @@
 // console.log(arr.join(" "));
 
 // напиши скрипт, який буде перебирати масив та видаляти з нього всі елементи що не є типом даних Number
-// const arr = [3, "Hello", null, 42, false];
+
 // приклад 1 : при видаленні йде реіндексація і робимо компенсацію 'i -=1'
+// const arr = [3, "Hello", null, 42, false];
 // for (let i = 0; i < arr.length; i += 1) {
 //   if (typeof arr[i] !== "number") {
 //     console.log(arr[i]);
@@ -705,6 +706,7 @@
 // console.log(arr);
 
 //приклад 2 починаємо перебирати з кінця масиву і не треба компенсувати реіндексацію
+// const arr = [3, "Hello", null, 42, false];
 // for (let i = arr.length - 1; i >= 0; i -= 1) {
 //   if (typeof arr[i] !== "number") {
 // console.log(arr[i]);
@@ -712,3 +714,80 @@
 //   }
 // }
 // console.log(arr);
+
+// Потрібно створити функцію яка буде приймати 1 параметр. Функція повинна відібрати з масиву тільки ті елементи, що дублюються в ньому та повернути їх у вигляді нового масиву.
+// function getCommonElements(arr) {
+//   let newArr = [];
+//   for (let i = 0; i < arr.length; i += 1) {
+//     if (arr.includes(arr[i], i + 1)) {
+//       newArr.push(arr[i]);
+//     }
+//   }
+//   console.log(newArr);
+// }
+// console.log(getCommonElements([1, 2, 3, 2, 1, 17, 19]));
+
+// Створи функцію, приймає 2 параметри:
+// 1- масив всіх юзерів
+// 2- масив чоловіків
+// функція повинна відібрати з масиву всіх юзерів лише жіночі імена та повернути їх.
+// const users = ["Artem", "Anna", "Larisa", "Maksim", "Svetlana", "David", "Roman", "Olga"];
+// const men = ["Artem", "Maksim", "David", "Roman"];
+// function getWomen(users, men) {
+//   const women = [];
+//   for (const user of users) {
+//     if (!men.includes(user)) {
+//       women.push(user);
+//     }
+//   }
+//   return women;
+// }
+// console.log(getWomen(users, men));
+
+// напиши скрипт, який розгортає рядок(зворотний порядок літер) і виведи в консоль.
+// const string = "Welcome to the future";
+// const newString = string.split("").reverse().join("");
+// console.log(newString);
+
+// напиши скрипт який буде перевіряти чи елементи в масиві розташовані в порядку зростання, якщо ні, то замінювати на вірні
+// const numbers = [1, 2, 3, 1, 5, 6, 1, 1, 9];
+// for (let i = 1; i < numbers.length; i += 1) {
+//   const currentEl = numbers[i];
+//   const prevEl = numbers[i - 1];
+//   if (currentEl - prevEl !== 1) {
+//     numbers[i] = prevEl + 1;
+//   }
+// }
+// console.log(numbers);
+
+//напиши функцію, яка на основі користувачив що поставили лайк формує та повертає рядок як у прикладах:
+//  []  ===> 'no one likes this'
+//  ['Peter'] ===> 'Peter likes this'
+//  ['Jacob', 'Alex'] ===> 'Jacob and Alex like this'
+//  ['Max', 'John', 'Mark'] ===> 'Max, John, Mark like this'
+//  ['Alex', 'Jacob', 'Mark', 'Max'] ===> 'Alex, Jacob and 2 others like this'
+// function createStr(arr) {
+//   let result = "";
+//   switch (arr.length) {
+//     case 0:
+//       result = "no one likes this";
+//       break;
+//     case 1:
+//       result = `${arr[0]} likes this`;
+//       break;
+//     case 2:
+//       result = `${arr[0]} and ${arr[1]} like this`;
+//       break;
+//     case 3:
+//       result = `${arr[0]}, ${arr[1]}, ${arr[2]} like this`;
+//       break;
+//     default:
+//       result = `${arr[0]}, ${arr[1]} and ${arr.length - 2} others like this`;
+//   }
+//   return result;
+// }
+// console.log(createStr([]));
+// console.log(createStr(["Peter"]));
+// console.log(createStr(["Jacob", "Alex"]));
+// console.log(createStr(["Max", "John", "Mark"]));
+// console.log(createStr(["Mark", "Alex", "Jacob", "Mark"]));
