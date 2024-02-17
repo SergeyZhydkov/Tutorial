@@ -791,3 +791,29 @@
 // console.log(createStr(["Jacob", "Alex"]));
 // console.log(createStr(["Max", "John", "Mark"]));
 // console.log(createStr(["Mark", "Alex", "Jacob", "Mark"]));
+
+// селект-меню з прослуховувачем події + html cod
+// const select = document.querySelector(".pizza-select");
+// const textOutput = document.querySelector(".text-output");
+// const valueOutput = document.querySelector(".value-output");
+
+// select.addEventListener("change", setOutput);
+
+// function setOutput(event) {
+//   const selectedOptionValue = event.currentTarget.value;
+//   console.log(selectedOptionValue);
+//   const selectedOptionIndex = event.currentTarget.selectedIndex;
+//   console.log(selectedOptionIndex);
+//   const selectedOptionText = event.currentTarget.options[selectedOptionIndex].text;
+//   console.log(selectedOptionText);
+//   textOutput.textContent = selectedOptionText;
+//   valueOutput.textContent = selectedOptionValue;
+// }
+
+// інпут виводить у строку текст з поля введення
+// const textInput = document.querySelector(".text-input");
+// const outPut = document.querySelector(".output");
+// textInput.addEventListener("input", (event) => {
+//   outPut.textContent = event.currentTarget.value;
+//   console.log(outPut.textContent);
+// });
