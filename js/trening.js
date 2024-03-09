@@ -817,3 +817,224 @@
 //   outPut.textContent = event.currentTarget.value;
 //   console.log(outPut.textContent);
 // });
+//
+// подіїї занурення-сплиття
+// const parent = document.querySelector("#parent");
+// const child = document.querySelector("#child");
+// const descendant = document.querySelector("#descendant");
+
+// parent.addEventListener("click", () => {
+//   console.log("Parent click handler");
+// });
+
+// child.addEventListener("click", () => {
+//   console.log("Child click handler");
+// });
+
+// descendant.addEventListener("click", () => {
+//   console.log("Descendant click handler");
+// });
+//
+// Об'єкти
+// +++++++++++++++++++++++++
+// const user = {
+//   name: "Jacques Gluke",
+//   tag: "jgluke",
+//   stats: {
+//     followers: 5603,
+//     views: 4827,
+//     likes: 1308,
+//   },
+// };
+// console.log(user.stats.likes);
+// const {
+//   name,
+//   tag,
+//   stats: { followers, views: userViews, likes: userLikes = 0 },
+// } = user;
+
+// console.log(name); // Jacques Gluke
+// console.log(tag); // jgluke
+// console.log(followers); // 5603
+// console.log(userViews); // 4827
+// console.log(userLikes); // 1308
+
+// ++++++++++
+// const user = {
+//   name: "Joys",
+//   age: 44,
+//   country: "USA",
+//   city: "New York",
+//   corp: "Pepsi Ko",
+//   softSkills: ["sociability", "mutual assistance", "stress resistance"],
+//   hardSkills: {
+//     HTML: true,
+//     CSS: true,
+//     JS: true,
+//     React: false,
+//   },
+// };
+// console.log(user);
+// console.log(user.corp);
+// user.raityng = 9.3;
+// user.scale = {
+//   likes: 2453,
+//   viev: 15433,
+//   comments: 769,
+// };
+// console.log(user.scale.comments);
+
+// const keys = Object.keys(user);
+// console.log(keys);
+// for (let key of keys) {
+//   console.log(key);
+// }
+// const value = Object.values(user);
+// console.log(value);
+// console.log(value.length);
+// for (let i = 0; i <= value.length; i += 1) {
+//   console.log(i);
+// }
+// console.log(...value);
+// console.log(Object.entries(user));
+// +++++++++++++++
+// const recordCollection = {
+//   2548: {
+//     albumTitle: "Slippery When Wet",
+//     artist: "Bon Jovi",
+//     tracks: ["Let It Rock", "You Give Love a Bad Name"],
+//   },
+//   2468: {
+//     albumTitle: "1999",
+//     artist: "Prince",
+//     tracks: ["1999", "Little Red Corvette"],
+//   },
+//   1245: {
+//     artist: "Robert Palmer",
+//     tracks: [],
+//   },
+//   5439: {
+//     albumTitle: "ABBA Gold",
+//   },
+// };
+// const keys = { ...recordCollection };
+// console.log(keys);
+// const newKeys = Object.keys(keys);
+// console.log(newKeys);
+// const value = Object.values(keys);
+// console.log(value);
+// ++++++++++++++++
+//  1
+// const object = {};
+// object.name = "John";
+// object.surname = "Smith";
+// console.log(object);
+// object.name = "Pete";
+// console.log(object);
+// delete object["name"];
+// console.log(object);
+// 2
+// function isEmpty(obj) {
+//   for (let key in obj) {
+//     return false;
+//   }
+//   return true;
+// }
+// const schedule = {};
+// alert(isEmpty(schedule));
+// schedule["8:30"] = "get up";
+// alert(isEmpty(schedule));
+// 3
+// const salaries = {
+//   John: 100,
+//   Ann: 160,
+//   Pete: 130,
+// };
+// let sum = 0;
+// for (let key in salaries) {
+//   sum += salaries[key];
+// }
+// alert(sum);
+
+// ++
+// const userEmail = prompt("Введите свой email");
+// const userLogin = prompt("Введите свой логин");
+// const userName = prompt("Ввеlите ваше имя");
+// const userlastName = prompt("Введите вашу фамилию");
+// const userAge = prompt("Введите ваш возраст");
+// console.log(userEmail);
+// console.log(userLogin);
+// console.log(userName);
+// console.log(userlastName);
+// console.log(userAge);
+
+// const user = {
+//   email: userEmail,
+//   login: [userLogin],
+//   name: [userName],
+//   lastName: [userlastName],
+//   age: [userAge],
+// };
+// console.log(user);
+
+// -----------------
+// const form = document.querySelector(".form");
+// const email = document.querySelector(".email-f").value;
+// const login = document.querySelector(".login-f").value;
+// const name = document.querySelector(".name-f").value;
+// const lastname = document.querySelector(".lastname-f").value;
+// const age = document.querySelector(".age-f").value;
+// const time = document.querySelector(".time-f").value;
+// console.log(age);
+// form.addEventListener("input", (value) => {
+//   console.log(login);
+// });
+
+// const user = {
+//   usEmail: email,
+//   usLogin: login,
+//   usName: name,
+//   usLastName: lastname,
+//   usAge: age,
+//   usTime: time,
+// };
+// console.log(user);
+//
+// 555555555555555555555555555555555
+const usersList = [];
+let userCounter = 1;
+document.getElementById("userForm").addEventListener("submit", function (event) {
+  event.preventDefault(); // Предотвращаем отправку формы по умолчанию
+
+  // Получаем значения полей формы
+  const login = document.getElementById("login").value;
+  const email = document.getElementById("email").value;
+  const name = document.getElementById("name").value;
+  const age = document.getElementById("age").value;
+  const time = document.getElementById("time").value;
+
+  // Создаем объект user с данными пользователя
+  const user = {
+    id: userCounter, // Порядковый номер пользователя
+    login: login,
+    email: email,
+    name: name,
+    age: age,
+    time: time,
+  };
+  usersList.push(user);
+  // Увеличиваем счетчик для следующего пользователя
+  userCounter++;
+  console.log(user); // Выводим данные пользователя в консоль
+  // Здесь можно добавить логику для отправки данных на сервер или их дальнейшей обработки
+  document.getElementById("login").value = "";
+  document.getElementById("email").value = "";
+  document.getElementById("name").value = "";
+  document.getElementById("age").value = "";
+  document.getElementById("time").value = "";
+  console.log(usersList);
+});
+
+// for (let elem of usersList) {
+//   console.log(elem);
+// }

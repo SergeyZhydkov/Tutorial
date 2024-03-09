@@ -30,9 +30,10 @@
     <!-- <input class="text-input" type="text" />
     <p>Text field value: <span class="output"></span></p> -->
 
-    <div class="text-container">
+    <!-- анімація горизонтального переміщення  кола з написом -->
+    <!-- <div class="text-container">
       <h1>Your Text Here</h1>
-    </div>
+    </div> -->
 
     <!-- 4 зелених плями -->
     <!-- <div class="my-svg-component">
@@ -119,7 +120,7 @@
       </svg>
     </div> -->
     <!-- line -->
-    <div class="lines-example">
+    <!-- <div class="lines-example">
       <div class="text">Z-index, or not z-index?</div>
       <svg class="line -bottom" viewBox="0 0 100 100" preserveAspectRatio="none">
         <path
@@ -147,9 +148,9 @@
           stroke-dasharray="400 400"
           mask="url(#top-line-mask)" />
       </svg>
-    </div>
+    </div> -->
     <!-- bubbles -->
-    <div class="container">
+    <!-- <div class="container">
       <div class="bubbles-container">
         <svg class="bubbles" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 701 1024" style="overflow: visible">
           <g class="bubbles-large" stroke-width="7">
@@ -236,7 +237,45 @@
       </div>
 
       <h1>Bubbles</h1>
-    </div>
+    </div> -->
+
+    <!-- <div id="parent">
+      Parent
+      <div id="child">
+        Child
+        <div id="descendant">Descendant</div>
+      </div>
+    </div> -->
+
+    <!-- ---------------- -->
+    <!-- <form class="form">
+      <input type="email" class="email-f" placeholder="email :" />
+      <input type="text" class="login-f" placeholder="login :" />
+      <input type="text" class="name-f" placeholder="name :" />
+      <input type="text" class="lastname-f" placeholder="lastname :" />
+      <input type="number" class="age-f" placeholder="age :" />
+      <input type="time" class="time-f" placeholder="time :" />
+      <input type="submit" class="submit-f" />
+    </form> -->
+
+    <form id="userForm">
+      <label for="login">Login:</label>
+      <input type="text" id="login" name="login" required /><br />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required /><br />
+
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required /><br />
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" required /><br />
+
+      <label for="time">Time:</label>
+      <input type="time" id="time" name="time" required /><br />
+
+      <button type="submit">Submit</button>
+    </form>
     <script src="/js/practic.js"></script>
     <script src="/js/trening.js" type="module"></script>
   </body>
