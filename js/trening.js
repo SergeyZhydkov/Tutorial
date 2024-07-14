@@ -751,7 +751,7 @@
 
 // напиши скрипт який буде перевіряти чи елементи в масиві розташовані в порядку зростання, якщо ні, то замінювати на вірні
 // const numbers = [1, 2, 3, 1, 5, 6, 1, 1, 9];
-// for (let i = 1; i < numbers.length; i += 1) {
+// for (let i = 1; i <li numbers.length; i += 1) {
 //   const currentEl = numbers[i];
 //   const prevEl = numbers[i - 1];
 //   if (currentEl - prevEl !== 1) {
@@ -1001,40 +1001,810 @@
 // console.log(user);
 //
 // 555555555555555555555555555555555
-const usersList = [];
-let userCounter = 1;
-document.getElementById("userForm").addEventListener("submit", function (event) {
-  event.preventDefault(); // Предотвращаем отправку формы по умолчанию
+// const usersList = [];
+// let userCounter = 1;
+// document.getElementById("userForm").addEventListener("submit", function (event) {
+//   event.preventDefault(); // Предотвращаем отправку формы по умолчанию
 
-  // Получаем значения полей формы
-  const login = document.getElementById("login").value;
-  const email = document.getElementById("email").value;
-  const name = document.getElementById("name").value;
-  const age = document.getElementById("age").value;
-  const time = document.getElementById("time").value;
+//   // Получаем значения полей формы
+//   const login = document.getElementById("login").value;
+//   const email = document.getElementById("email").value;
+//   const name = document.getElementById("name").value;
+//   const age = document.getElementById("age").value;
+//   const time = document.getElementById("time").value;
 
-  // Создаем объект user с данными пользователя
-  const user = {
-    id: userCounter, // Порядковый номер пользователя
-    login: login,
-    email: email,
-    name: name,
-    age: age,
-    time: time,
-  };
-  usersList.push(user);
-  // Увеличиваем счетчик для следующего пользователя
-  userCounter++;
-  console.log(user); // Выводим данные пользователя в консоль
-  // Здесь можно добавить логику для отправки данных на сервер или их дальнейшей обработки
-  document.getElementById("login").value = "";
-  document.getElementById("email").value = "";
-  document.getElementById("name").value = "";
-  document.getElementById("age").value = "";
-  document.getElementById("time").value = "";
-  console.log(usersList);
-});
+//   // Создаем объект user с данными пользователя
+//   const user = {
+//     id: userCounter, // Порядковый номер пользователя
+//     login: login,
+//     email: email,
+//     name: name,
+//     age: age,
+//     time: time,
+//   };
+//   usersList.push(user);
+//   // Увеличиваем счетчик для следующего пользователя
+//   userCounter++;
+//   console.log(user); // Выводим данные пользователя в консоль
+//   const userKeys = Object.keys(user);
+//   console.log(userKeys);
+//   const userValues = Object.values(user);
+//   console.log(userValues);
+//   // Здесь можно добавить логику для отправки данных на сервер или их дальнейшей обработки
+//   document.getElementById("login").value = "";
+//   document.getElementById("email").value = "";
+//   document.getElementById("name").value = "";
+//   document.getElementById("age").value = "";
+//   document.getElementById("time").value = "";
+//   console.log(usersList);
+// });
 
-// for (let elem of usersList) {
+// // for (let elem of usersList) {
+// //   console.log(elem);
+// // }
+// 5555555555555555555555555555555555555555
+// деструктуризація  об'єкта у функції
+// const user = {
+//   name: "Test name",
+//   skills: {
+//     html: true,
+//     css: false,
+//     js: true,
+//   },
+// };
+// function getUserName({ name, skills: { html, css, js } }) {
+//   console.log(`Hello my name is ${name}, I know html - ${html}, css - ${css}, js - ${js}`);
+// }
+
+// getUserName(user);
+// 55555555555555555555555555555555555555555555
+// деструктуризація об'єкта в циклі
+// const users = [{ name: "Kate" }, { name: "Alex" }, { name: "Mark" }, {}];
+// const names = [];
+// // можна зазначити дефолт.значення якщо чогось не буде
+// for (const { name = "Do not found" } of users) {
+//   names.push(name);
+// }
+// console.log(names);
+// 5555555555555555555555555555
+// let arr = [];
+// const numbers = [55, 77, 42, 1, 3, 6, 8, 2, 5, 11, 17];
+// numbers.forEach(function (element, index) {
+//   console.log(`Index ${index}, value ${element}`);
+//   if (element % 2 !== 0) {
+//     arr.push(element);
+//   }
+// });
+// console.log(arr);
+// console.log(numbers);
+// console.log(numbers.join(" "));
+// console.log(numbers.slice(1, 6));
+// console.log(numbers.splice(1, 0, 88));
+// console.log(numbers.splice(1, 3));
+// for (let elem of numbers) {
 //   console.log(elem);
 // }
+
+// let newArr = [];
+// for (let elem of numbers) {
+//   console.log(elem);
+//   if (elem % 2 !== 0) {
+//     newArr.push(elem);
+//   }
+// }
+// console.log(newArr);
+
+// function calculateTotalPrice(orderedItems) {
+//   let totalPrice = 0;
+
+//   orderedItems.forEach(function (elem) {
+//     totalPrice += elem;
+//   });
+//   console.log(totalPrice);
+//   return totalPrice;
+// }
+// calculateTotalPrice([164, 48, 291]);
+// calculateTotalPrice([542, 4, 21]);
+// calculateTotalPrice([14, 8, 29]);
+// calculateTotalPrice([64, 480, 21]);
+// const numero = [6, 9, 3, 5, 1, 2, 7, 8];
+// console.log(numbers);
+// const newArray = numbers.sort();
+// console.log(newArray);
+// console.log(numero.sort());
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//      title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Dream of a Ridiculous Man",
+//     author: "Fyodor Dostoevsky",
+//     rating: 7.75,
+//   },
+//   { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+//   { title: "Enemy of God", author: "Bernard Cornwell", rating: 8.67 },
+// ];
+
+// const titles = books.map((book) => book.title);
+// console.log(titles);
+// 44444444444444444444444444444444444444444444
+// const numbers = [17, 24, 82, 61, 36, 18, 47, 52, 73];
+
+// const evenNumbers = numbers.filter((number) => number % 2 === 0);
+// const oddNumbers = numbers.filter((number) => number % 2 !== 0);
+// console.log(numbers);
+// console.log(evenNumbers);
+// console.log(evenNumbers.sort());
+
+// console.log(oddNumbers);
+// console.log(oddNumbers.sort());
+// console.log(oddNumbers.join("-"));
+// console.log(oddNumbers.reverse());
+// 4444444444444444444444444444444444444444
+// const lowScore = 40;
+// const highScore = 80;
+// const students = [
+//   { id: 1, name: "Ajax", score: 56, sciens: ["Math", "JS", "Node.js"] },
+//   { id: 2, name: "Matias", score: 34, sciens: ["Vue", "React"] },
+//   { id: 3, name: "Billy", score: 98, sciens: ["HTML", "CSS", "JS"] },
+//   { id: 4, name: "Ted", score: 27, sciens: ["TS", "HTML", "CSS"] },
+//   { id: 5, name: "Kevin", score: 75, sciens: ["Softskills", "Hardskills"] },
+//   { id: 6, name: "Jolly", score: 53, sciens: ["Next.js"] },
+//   { id: 7, name: "Rose", score: 81, sciens: ["JS", "HTML", "CSS"] },
+// ];
+// const low = students.filter((student) => student.score <= lowScore);
+// console.log(low);
+// const high = students.filter((student) => student.score > highScore);
+// console.log(high);
+// const midl = students.filter((student) => student.score > lowScore && student.score <= highScore);
+// console.log(midl);
+// const midi = students.filter(({ score }) => score > lowScore && score <= highScore);
+// console.log(midi);
+// const para = students.filter(({ id }) => id % 2 === 0);
+// console.log(para);
+// const nepara = students.filter(({ id }) => id % 2 !== 0);
+// console.log(nepara);
+// const fin = students.find(({ id }) => id === 2);
+// console.log(fin);
+// 2222222222222222222222222222222
+// const users = [
+//   {
+//     name: "Moore Hensley",
+//     email: "moorehensley@indexia.com",
+//     eyeColor: "blue",
+//     friends: ["Sharron Pace"],
+//     isActive: false,
+//     balance: 2811,
+//     gender: "male",
+//   },
+//   {
+//     name: "Sharlene Bush",
+//     email: "sharlenebush@tubesys.com",
+//     eyeColor: "blue",
+//     friends: ["Briana Decker", "Sharron Pace"],
+//     isActive: true,
+//     balance: 3821,
+//     gender: "female",
+//   },
+//   {
+//     name: "Ross Vazquez",
+//     email: "rossvazquez@xinware.com",
+//     eyeColor: "green",
+//     friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//     isActive: false,
+//     balance: 3793,
+//     gender: "male",
+//   },
+//   {
+//     name: "Elma Head",
+//     email: "elmahead@omatom.com",
+//     eyeColor: "green",
+//     friends: ["Goldie Gentry", "Aisha Tran"],
+//     isActive: true,
+//     balance: 2278,
+//     gender: "female",
+//   },
+//   {
+//     name: "Carey Barr",
+//     email: "careybarr@nurali.com",
+//     eyeColor: "blue",
+//     friends: ["Jordan Sampson", "Eddie Strong"],
+//     isActive: true,
+//     balance: 3951,
+//     gender: "male",
+//   },
+//   {
+//     name: "Blackburn Dotson",
+//     email: "blackburndotson@furnigeer.com",
+//     eyeColor: "brown",
+//     friends: ["Jacklyn Lucas", "Linda Chapman"],
+//     isActive: false,
+//     balance: 1498,
+//     gender: "male",
+//   },
+//   {
+//     name: "Sheree Anthony",
+//     email: "shereeanthony@kog.com",
+//     eyeColor: "brown",
+//     friends: ["Goldie Gentry", "Briana Decker"],
+//     isActive: true,
+//     balance: 2764,
+//     gender: "female",
+//   },
+// ];
+// const names = users.toSorted((a, b) => a.balance - b.balance).map((user) => user.name);
+// console.log(names);
+// const bal = users.toSorted((a, b) => a.balance - b.balance);
+// console.log(bal);
+// const balu = users.toSorted((a, b) => a.balance - b.balance).map((user) => user.balance);
+// console.log(balu);
+// const a = users.flatMap((user) => user.friends);
+// console.log(a);
+// const b = a.filter((elem, index, array) => array.indexOf(elem) === index);
+// console.log(b);
+// const c = b.toSorted((a, b) => a.localeCompare(b));
+// console.log(c);
+
+// const d = users.reduce((acc, user) => acc + user.balance);
+// console.log(d);
+// console.log(typeof d);
+// const calculateTotalBalance = (users) => {
+//   return users.reduce((acc, user) => {
+//     return acc + user.balance;
+//   }, 0);
+// };
+// console.log(calculateTotalBalance(users));
+
+// 4444444444444444444
+// const scores = [61, 19, 74, 35, 92, 56];
+// const descendingScores = scores.toSorted((a, b) => b - a);
+// console.log(descendingScores); // [92, 74, 61, 56, 35, 19]
+// const a = scores.toSorted((a, b) => a - b);
+// console.log(a);
+// const b = scores.toSorted((a, b) => (a = 0));
+// console.log(b);
+// 666666666666666666666666666666666666666666666
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Dream of a Ridiculous Man",
+//     author: "Fyodor Dostoevsky",
+//     rating: 7.75,
+//   },
+//   { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+//   {
+//     title: "The Dreams in the Witch House",
+//     author: "Howard Lovecraft",
+//     rating: 8.67,
+//   },
+// ];
+// const MIN_BOOK_RATING = 8;
+
+// const names = books
+//   .filter(({ rating }) => rating > MIN_BOOK_RATING)
+//   .map((book) => book.author)
+//   .toSorted((a, b) => a.localeCompare(b));
+// // const names = books.filter((elem) => elem > MIN_BOOK_RATING);
+// // .map((book) => book.author)
+// // .toSorted((a, b) => a.localeCompare(b));
+// console.log(names);
+// 8888888888888888888888888888888888888
+// const pizzaPalace = {
+//   pizzas: ["Supercheese", "Smoked", "Four meats"],
+//   checkPizza(pizzaName) {
+//     return this.pizzas.includes(pizzaName);
+//   },
+//   order(pizzaName) {
+//     const isPizzaAvailable = this.checkPizza(pizzaName);
+
+//     if (!isPizzaAvailable) {
+//       return `Sorry, there is no pizza named «${pizzaName}»`;
+//     }
+
+//     return `Order accepted, preparing «${pizzaName}» pizza`;
+//   },
+// };
+// console.log(pizzaPalace);
+// 55555555555555555555555555
+// const user = {
+//   username: "Poly",
+//   showThis() {
+//     console.log(this);
+//   },
+// };
+
+// user.showThis(); // {username: "Poly", showThis: ƒ}
+// 7777777777777777777777777777777
+// const parent = {
+//   name: "Stacey",
+//   surname: "Moore",
+//   age: 54,
+//   heritage: "Irish",
+// };
+
+// const child = Object.create(parent);
+// child.name = "Jason";
+// child.age = 27;
+// 9999999999999999999999999999999
+// const arr = [1, 3, 6, 8, 2, 5, 4];
+// console.log(arr);
+// const a = arr.sort();
+// console.log(a);
+// console.log(arr);
+// const b = arr.lastIndexOf(6);
+// console.log(b);
+// console.log(arr.indexOf(6));
+// console.log(arr.includes(7));
+// console.log(arr.reverse());
+// console.log("join :", arr.join("-"));
+// console.log("toString :", arr.toString());
+// console.log("toLocaleString :", arr.toLocaleString());
+// console.log("copyWithin :", arr.copyWithin());
+// console.log("fill (мутуючий):", arr.fill(1, 3));
+// console.log("slice :", arr.slice(3, 5));
+// 77777777777777777777777777777777
+// const arr = ["Mumu", "Skype", "35", "Tor", "Elite", "2022", "Mamont", "Dodik", "Josef-Kaz", "1980"];
+// const mas = [8, 5, 23, 78, 12, 7, 4, 55, 69, 70];
+// console.log(arr);
+// console.log(arr.length);
+// // console.log("toString :", arr.toString());
+// // const a = arr.join("");
+// // console.log(a);
+// // console.log(a.split(""));
+// // console.log("j0in :", arr.join(" "));
+// // console.log("j0in :", arr.join("-"));
+// // console.log("j0in :", arr.join(" ,"));
+// console.log("pop :", arr.pop());
+// console.log(arr);
+// console.log("push :", arr.push("Royal House"));
+// console.log(arr);
+// console.log("shift :", arr.shift());
+// console.log(arr);
+// console.log("unshift :", arr.unshift("BMW"));
+// console.log(arr);
+// console.log(delete arr[1]);
+// console.log(arr);
+// const b = mas.toString().split(",");
+// console.log(b);
+// const c = arr.concat(b);
+// console.log(c);
+// const d = c.sort();
+// console.log(d);
+// console.log(mas);
+// const dd = mas.splice(2, 1);
+// console.log(dd);
+// console.log(Array.isArray(arr));
+// console.log(Array.isArray(mas));
+// console.log(mas.indexOf(78, 0));
+// console.log(mas.indexOf(78, 6));
+// const e = mas.find((elem) => elem > 10 && elem < 60);
+// console.log(e);
+// console.log(mas.findIndex((elem) => elem > 10));
+// console.log(arr.includes("BMW"));
+// console.log(mas.every((elem) => elem < 50));
+// console.log(mas.some((elem) => elem < 25));
+// console.log(mas.fill());
+// 777777777777777777777777777777777777777777777777777
+// function greetGuest(greeting) {
+//   console.log(`Доречі ${greeting}, ${this.username}.`);
+// }
+
+// const mango = {
+//   username: "Манго",
+// };
+// const poly = {
+//   username: "Полі",
+// };
+
+// greetGuest.call(mango, "Ласкаво просимо"); // Ласкаво просимо, Манго.
+// greetGuest.call(poly, "З прибуттям"); // З прибуттям, Полі.
+// 777777777777777777777777777777777777
+// const abbik = {
+//   name: "Otto",
+// };
+// const bobbik = Object.create(abbik);
+// abbik.lastName = "Schmidtt";
+// const doddik = Object.create(bobbik);
+// doddik.age = 34;
+// const coddik = Object.create(doddik);
+// coddik.email = "ogogo@mail.com";
+// console.log(abbik);
+// console.log(bobbik);
+// console.log(doddik);
+// console.log(coddik);
+// console.log(coddik.name);
+// console.log(coddik.age);
+// console.log(coddik.lastName);
+// console.log(coddik.email);
+// console.log(doddik.name);
+// console.log(doddik.age);
+// console.log(abbik.isPrototypeOf(coddik));
+// console.log(coddik.hasOwnProperty("lastName"));
+// 88888888888888888888888888888888888888
+// class User {
+//   // Тіло класу
+// }
+
+// const mango = new User();
+// console.log(mango); // {}
+
+// const poly = new User();
+// console.log(poly); // {}
+// 88888888888888888888888
+// const a = {
+//   a: 5,
+// };
+// console.log(a);
+// const b = Object.create(a);
+// b.b = 7;
+// console.log(b);
+// const c = Object.create(b);
+// c.c = 9;
+// console.log(c);
+// const d = Object.create(a);
+// d.d = 2;
+// d.a = 1;
+// console.log(d);
+// 11111111111111111111111111111111
+// function findLongestWord(string) {
+//   // Change code below this line
+//   const newString = string.split(" ");
+//   console.log(newString);
+//   let longestWord = newString[0];
+//   console.log(longestWord);
+//   for (let i = 0; i < newString.length; i += 1) {
+//     console.log(i);
+//     if (newString[i].length > longestWord.length) {
+//       longestWord = newString[i];
+//     }
+//     console.log(longestWord[i]);
+//     console.log(longestWord);
+//     return longestWord;
+//   }
+
+//   // Change code above this line
+// }
+// findLongestWord("The box quick fly in Big Touer");
+
+// function findLongestWord(string) {
+//   // Change code below this line
+//   let arrStr = string.split(" ");
+//   console.log(arrStr);
+//   let wordlength = 0;
+//   let longestWord;
+//   for (let i = 0; i < arrStr.length; i++) {
+//     wordlength = arrStr[2].length;
+//     console.log(wordlength);
+//     if (arrStr[i].length > wordlength) {
+//       longestWord = arrStr[i];
+//       console.log(longestWord);
+//       return longestWord;
+//     }
+//   }
+//   // Change code above this line
+// }
+// findLongestWord("The quick brown fox jumped over the lazy dog");
+// 5555555555555555555555555555555
+// const arr = [1, 2, 3, 4, 5];
+// console.log(arr.length);
+// console.log(arr.push(6));
+// console.log(arr.unshift(0));
+// console.log(arr.pop());
+// console.log(arr.shift());
+// console.log(arr.join("-"));
+// console.log(arr.indexOf(3));
+// console.log("4", arr.includes(4));
+// console.log(arr.map((num) => Math.pow(num, 2)));
+// console.log(arr.map((num) => Math.pow(num, 3)));
+// console.log(arr.filter((num) => num % 2 === 0));
+// console.log(arr.every((num) => num > 0));
+// console.log(arr.some((num) => num < 3));
+// // console.log(arr.fill(7));
+// console.log(arr.reduce((acc, num) => acc + num, 0));
+// console.log(arr.reduce((acc, num) => acc * num, 1));
+// console.log(arr.concat(["tru-la-la", "Bob"]));
+// console.log(arr.reverse());
+// console.log(arr.sort());
+// console.log(arr.find((num, i) => i === 2));
+// console.log(arr.findIndex((num) => num === 5));
+// console.log(arr.toString());
+
+// let side1 = prompt("Длина прямоугольника ");
+// let side2 = prompt("Ширина прямоугольника ");
+// console.log(side1);
+// console.log(side2);
+// alert((Number(side1) + Number(side2)) * 2);
+// console.log((Number(side1) + Number(side2)) * 2);
+
+//goit-js-hw-06 task-1, task-2, task-3
+
+// task-1
+// const customer = {
+//   username: "Mango",
+//   balance: 24000,
+//   discount: 0.1,
+//   orders: ["Burger", "Pizza", "Salad"],
+//   // Change code below this line
+//   getBalance() {
+//     return this.balance;
+//   },
+//   getDiscount() {
+//     return this.discount;
+//   },
+//   setDiscount(value) {
+//     this.discount = value;
+//   },
+//   getOrders() {
+//     return this.orders;
+//   },
+//   addOrder(cost, order) {
+//     this.balance -= cost - cost * this.discount;
+//     this.orders.push(order);
+//   },
+//   // Change code above this line
+// };
+
+// customer.setDiscount(0.15);
+// console.log(customer.getDiscount()); // 0.15
+// customer.addOrder(5000, "Steak");
+// console.log(customer.getBalance()); // 19750
+// console.log(customer.getOrders()); // ["Burger", "Pizza", "Salad", "Steak"]
+
+// task-2
+// class Storage {
+//   #items = [];
+
+//   constructor(items) {
+//     this.#items = items;
+//   }
+//   getItems() {
+//     return this.#items;
+//   }
+//   addItem(newItem) {
+//     this.#items.push(newItem);
+//   }
+//   removeItem(itemToRemove) {
+//     for (item of this.#items) {
+//       if (item === itemToRemove) {
+//         this.#items.splice(0, itemToRemove);
+//       }
+//       return;
+//     }
+//   }
+// }
+
+// const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+
+// storage.addItem("Droid");
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+
+// storage.removeItem("Prolonger");
+// console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
+
+// storage.removeItem("Scaner");
+// console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
+
+// 55555555555555555555555555555555555555555555555
+// let num1 = 1;
+// let num2 = 2;
+// console.log("сумма: " + Number(num1 + num2));
+// let num = "123";
+// let sum = Number(num[0]) + Number(num[1]) + Number(num[2]);
+// console.log(sum);
+// let num = 123;
+// let numero = num.toString()[0];
+// console.log(numero);
+// let a = 24 * 60 * 60;
+// console.log(a);
+// let num = 123;
+// let str = String(num);
+// console.log(str[str.length - 1]);
+// let num = 123;
+// let str = String(num);
+// console.log(str.length);
+// let a = "123";
+// let b = "456";
+// let s = Number(a) + Number(b);
+
+// console.log(s);
+// let aaa = 1;
+// let bbb = 2;
+// let ccc = 3;
+// console.log(typeof aaa);
+// console.log(aaa + bbb + ccc);
+// alert(60 * 60 * 24 * 365);
+// let arr = [1, 2, 3];
+// console.log(arr[0] + arr[1] + arr[2]);
+// let arr = ["a", "b", "c"];
+// arr[0] += "!1";
+// arr[1] += "!2";
+// arr[2] += "!3";
+// console.log(arr);
+
+// 9999999999999999999999999999999999999
+// модуль 5 заняття 10
+// task 1
+// class Rectangle {
+//   #width;
+//   #height;
+//   constructor({ width, heigth } = {}) {
+//     this.#width = width;
+//     this.#height = heigth;
+//   }
+//   get width() {
+//     return this.#width;
+//   }
+//   get heigth() {
+//     return this.#height;
+//   }
+//   set width(newWidth) {
+//     if (typeof newWidth === "number" && newWidth > 0) {
+//       this.#width = newWidth;
+//     } else {
+//       console.log("Ширина має бути числом і більша за 0");
+//     }
+//   }
+//   set heigth(newHeigth) {
+//     if (typeof newHeigth === "number" && newHeigth > 0) {
+//       this.#height = newHeigth;
+//     } else {
+//       console.log("Висота має бути числом і більша за 0");
+//     }
+//   }
+// }
+
+// const item = new Rectangle({ width: 10, heigth: 5 });
+// console.log(item);
+// console.log(item.width);
+// item.width = 12;
+// console.log(item.width);
+
+// task 2
+// class User {
+//   #name;
+//   #surname;
+//   constructor(name, surname) {
+//     this.#name = name;
+//     this.#surname = surname;
+//   }
+//   getFullName() {
+//     return `${this.#name} ${this.#surname}`;
+//   }
+// }
+
+// class Student extends User {
+//   constructor(name, surname, year) {
+//     super(name, surname);
+//     this.year = year;
+//   }
+//   getCourse() {
+//     const today = new Date();
+//     const currentYear = today.getFullYear();
+//     console.log(currentYear);
+//     const diff = currentYear - this.year;
+//     if (diff > 5) {
+//       return "Студент закінчив навчання";
+//     } else {
+//       return `Студент навчається на ${diff} курсі`;
+//     }
+//   }
+// }
+// const student = new Student("Петрик", "П'яточкин", 2019);
+// console.log(student);
+// console.log(student.getFullName());
+// console.log(student.getCourse());
+
+// task 3
+// Необхідно створити клас Hero, який представляє героя з гри.Клас повинен мати публічні властивості, та, а також методи та, шщо дозволяють герою атакувати та відновлювати здоров'я відповідно.
+// також створи функціонал для підрахунку створених героїв
+// властивість має зберігати ім'я героя
+// властивість має зберігати рівень героя
+// властивість має зберігати поточний рівень здоров'я героя
+// метод наносить пошкодження в розмірі 10 одиниць
+// метод додає до здоров'я героя 10 одиниць
+// class Hero {
+//   static counter = 0;
+//   static addHero() {
+//     // Hero.counter +=1; або
+//     this.counter += 1;
+//     console.log(`Кількість героїв ${this.counter}`);
+//   }
+//   #level;
+//   constructor(name, level, health) {
+//     this.name = name;
+//     this.#level = 1;
+//     this.health = 200;
+//     Hero.addHero();
+//   }
+//   attack() {
+//     return "Атакує з 10";
+//   }
+//   heal() {
+//     return (this.health += 10);
+//   }
+// }
+// const bloodseker = new Hero("Bloodseker");
+// const bloodseker2 = new Hero("Bloodseker");
+// const bloodseker3 = new Hero("Bloodseker");
+// const bloodseker4 = new Hero("Bloodseker");
+// console.log(bloodseker);
+// console.log(bloodseker.attack());
+// console.log(bloodseker.heal());
+
+// task 4
+// Необхідно створити клас BankAccount який представляє банківський рахунок. Клас повинен мати приватну властивість balance,яка представляє баланс рахунку. Клас також повинен мати публічні методи deposit та withdraw, які дозволяють здійснювати операції з депозитом та зняттям коштів з рахунку. При цьому balance повинна бути доступна лише в межах класу BankAccount та його приватних методів.
+// class BankAccount {
+//   #balance;
+//   constructor() {
+//     this.#balance = 0;
+//   }
+//   #changeBalance(amount) {
+//     this.#balance += amount;
+//   }
+//   // готівка на депозит
+//   deposit(amount) {
+//     if (amount <= 0) {
+//       console.log("Сума має бути більша за нуль");
+//       return;
+//     }
+//     this.#changeBalance(amount);
+//     console.log(`Здійснено депозит на ${amount}`);
+//   }
+//   // зняття готівки
+//   withdraw(amount) {
+//     if (amount <= 0) {
+//       console.log("Сума має бути більша за нуль");
+//     } else if (amount > this.#balance) {
+//       console.log("Недостатньо коштів на рахунку");
+//     } else {
+//       this.#changeBalance(-amount);
+//       console.log(`Знято ${amount}`);
+//     }
+//   }
+// }
+// const instance = new BankAccount();
+// instance.deposit(100);
+// instance.deposit(1200);
+// instance.withdraw(1000);
+// console.log(instance);
+// *****************************************************
+
+// const technologies = ["Ops", "HTML", "1", "CSS", "JS", "React", "Node"];
+// console.log(technologies);
+// technologies.push("Ruby");
+// console.log(technologies);
+// const list = document.querySelector(".list");
+// const markup = technologies.map((technology) => `<li class="list-item>${technology}</li>`).join(" ");
+// console.log(markup);
+// list.innerHTML = markup;
+// const newTechnologies = ["Vue", "Angular", "TypeScript"];
+// const newMarkup = newTechnologies.map((technolog) => `<li class="list-item new">${technolog}</li>`).join("");
+// console.log(newMarkup);
+// list.insertAdjacentHTML("beforeend", newMarkup);
+
+// **************************************
+const bambuk = {
+  part: 3,
+  salads: ["Cezar", "Oliv'e", "Bergamo"],
+  table: 7,
+  worker: "Mark",
+  waiter: "",
+};
+console.log(bambuk);
