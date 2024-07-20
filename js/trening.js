@@ -1800,11 +1800,28 @@
 // list.insertAdjacentHTML("beforeend", newMarkup);
 
 // **************************************
-const bambuk = {
-  part: 3,
-  salads: ["Cezar", "Oliv'e", "Bergamo"],
-  table: 7,
-  worker: "Mark",
-  waiter: "",
-};
-console.log(bambuk);
+// const bambuk = {
+//   part: 3,
+//   salads: ["Cezar", "Oliv'e", "Bergamo"],
+//   table: 7,
+//   worker: "Mark",
+//   waiter: "Arizona",
+// };
+// console.log(bambuk);
+// const bau = Object.create(bambuk);
+// bau.login = "TaTiSho";
+// bau.price = 4523;
+// console.log(bau);
+// console.log(bau.hasOwnProperty("table"));
+// console.log(Object.keys(bau));
+// console.log(Object.values(bau));
+// console.log(Object.entries(bau));
+// 2222222222222222222222222222222222222222222222
+// применение дом-в
+const ul = document.querySelector(".list");
+const li = `<li>
+<h2>HTML</h2>
+<h2>CSS</h2>
+  </li>`;
+ul.insertAdjacentHTML("afterbegin", ul);
+// console.log(ul);
